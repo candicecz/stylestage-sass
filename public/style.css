@@ -1,5 +1,44 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500&display=swap");
+@font-face {
+  font-family: "Propaganda";
+  src: url("../fonts/propaganda.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Kremlin";
+  src: url("../fonts/kremlin.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Kyrilla";
+  src: url("../fonts/kyrilla.ttf") format("truetype");
+}
+@font-face {
+  font-family: "RealYoung";
+  src: url("../fonts/realyoung.ttf") format("truetype");
+}
+@font-face {
+  font-family: "College";
+  src: url("../fonts/college.ttf") format("truetype");
+}
+/*
+=============================================================
+| COLORS
+=============================================================
+*/
+/*
+=============================================================
+| BREAKPOINTS
+=============================================================
+*/
+/*
+=============================================================
+| SPACE
+=============================================================
+*/
+/*
+=============================================================
+| FONT SIZES
+=============================================================
+*/
 :root {
   --color-primary: #3a00ff;
   --color-primary-alt: #6f6ffd;
@@ -8,13 +47,14 @@
   --color-text: #412d86;
   --color-light: #fff;
   --color-anchor: #3a00ff;
-  --font-family: "Baloo 2", sans-serif;
+  --font-family: "College";
+  --font-family-strong: "Propaganda";
   --font-weight-strong: 500;
-  --font-size-h1: 6rem;
-  --font-size-h2: 3rem;
+  --font-size-h1: 30rem;
+  --font-size-h2: 4rem;
   --font-size-h3: 2rem;
   --font-size-h4: 1.35rem;
-  --font-size-text: 1.15rem;
+  --font-size-text: 1rem;
   --border-radius: 8px;
 }
 
@@ -83,16 +123,16 @@ h4 {
   font-weight: var(--font-weight-strong);
   line-height: 1;
   margin-bottom: 0.65em;
+  font-family: var(--font-family-strong);
 }
 
 h1 {
-  font-size: var(--font-size-h1);
-  font-size: clamp(2rem, 7vw, var(--font-size-h1));
+  font-size: clamp(3rem, 18vw, var(--font-size-h1));
 }
 
 h2 {
   font-size: var(--font-size-h2);
-  font-size: clamp(2rem, 4vw, var(--font-size-h2));
+  font-size: clamp(1.5rem, 3vw, var(--font-size-h2));
   text-align: center;
 }
 
@@ -246,27 +286,44 @@ article,
 
 header {
   --logomark-height: 3em;
-  --logomark-padding: 0 1em;
   display: grid;
   min-height: 40vh;
   place-items: center;
   padding: 10vh 2rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%233a00ff' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d42257' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: 0 -38px, 17px -40px;
-  color: var(--color-primary);
-  text-align: center;
-}
-header h1 {
-  display: inline-grid;
-  min-height: var(--logomark-height);
-  padding: var(--logomark-padding);
-  border: 0.16em solid var(--color-primary);
-  box-shadow: 0.12em 0.12em var(--color-secondary);
-  place-content: center;
+  color: #fbe3d2;
+  background: #ec6363;
 }
 header h2 {
   max-width: 30ch;
+}
+header .container {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+header .container h1 {
+  margin-bottom: 0.5rem;
+  flex: 1;
+}
+header .container h2 {
+  margin-bottom: 0.5rem;
+  flex: 1;
+  max-width: unset;
+  text-align: left;
+}
+header .container p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  min-width: 330px;
+  line-height: 2.5;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 30em) {
+  header .container p {
+    flex-direction: row;
+  }
 }
 
 nav ul {
@@ -744,4 +801,35 @@ nav ul li {
   height: 1em;
   margin-right: 0.25em;
   fill: currentColor;
+}
+
+.text-link {
+  padding: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  color: #ec6363;
+  background: #fbe3d2;
+  box-shadow: 0.18em 0.18em var(--color-secondary);
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+.text-link svg {
+  width: 1em;
+  height: 1em;
+  margin-right: 0.25em;
+  fill: currentColor;
+}
+.text-link:hover, .text-link:focus {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  color: #d34e4e;
+  transform: translate(-0.15em, -0.15em);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0.3em 0.3em var(--color-secondary);
+}
+.text-link:focus {
+  outline-color: transparent;
+  outline-style: solid;
 }
