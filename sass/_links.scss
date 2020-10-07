@@ -94,3 +94,39 @@
     fill: currentColor;
   }
 }
+
+.text-link {
+  @include space("padding", 2);
+  @include space("padding-top", 1);
+  @include space("padding-bottom", 1);
+  @include space("margin-left", 2);
+  @include space("margin-right", 2);
+
+  color: $color-bg-1;
+  background: $color-text-1;
+  box-shadow: 0.18em 0.18em var(--color-secondary);
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+
+  svg {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.25em;
+    fill: currentColor;
+  }
+
+  &:hover,
+  &:focus {
+    @include space("padding-left", 3);
+    @include space("padding-right", 3);
+    color: $color-bg-darker-1;
+    transform: translate(-0.15em, -0.15em);
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0.3em 0.3em var(--color-secondary);
+  }
+
+  &:focus {
+    outline-color: transparent;
+    outline-style: solid;
+  }
+}
