@@ -107,6 +107,10 @@
   box-shadow: 0.18em 0.18em var(--color-secondary);
   text-align: center;
   transition: all 0.2s ease-in-out;
+  line-height: 1;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
 
   svg {
     width: 1em;

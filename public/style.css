@@ -266,13 +266,6 @@ article .container,
 #styles .container {
   width: 100%;
   max-width: 80ch;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-article,
-#styles {
-  padding: 1rem;
 }
 
 .page-footer ul,
@@ -814,6 +807,10 @@ nav ul li {
   box-shadow: 0.18em 0.18em var(--color-secondary);
   text-align: center;
   transition: all 0.2s ease-in-out;
+  line-height: 1;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
 }
 .text-link svg {
   width: 1em;
