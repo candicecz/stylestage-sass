@@ -8,10 +8,15 @@ $color-primary: #3a00ff !default;
 $color-primary-alt: #6f6ffd !default;
 $color-secondary: #d42257 !default;
 $color-background: #d2fbf7 !default;
+$BACKGROUND_DEFAULT: #fff6ed !default;
+$TEXT_DEFAULT: #363636 !default;
 
-$color-bg-1: #ec6363 !default;
-$color-bg-darker-1: #d34e4e !default;
-$color-text-1: #fbe3d2 !default;
+// HEADER
+$HEADER_PRIMARY: #ec6363;
+
+// ABOUT
+$ABOUT_PRIMARY: #5a50f3;
+$ABOUT_SECONDARY: #ff4a80;
 
 $brand-colors: (
   primary: $color-primary,
@@ -29,7 +34,7 @@ $color-gray: mix(#767676, $color-body, 70%) !default;
 $colors: map-merge(
   $brand-colors,
   (
-    background: $color-background,
+    background-color: $color-background,
     text: $color-body,
     light: #fff,
   )
@@ -62,6 +67,7 @@ $BREAKPOINT_LG: 64em; // 1024px
 | SPACE
 =============================================================
 */
+
 $sizes: 0rem, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 2rem, 2.5rem,
   3rem, 4rem, 5rem, 6rem, 8rem;
 
@@ -79,13 +85,15 @@ $font-size-h1: 30rem !default;
 $font-size-h2: 4rem !default;
 $font-size-h3: 2rem !default;
 $font-size-h4: 1.35rem !default;
-$font-size-text: 1rem !default;
+$font-size-h5: 1.25rem !default;
+$font-size-text: 1.15rem !default;
 
 $font-sizes: (
   h1: $font-size-h1,
   h2: $font-size-h2,
   h3: $font-size-h3,
   h4: $font-size-h4,
+  h5: $font-size-h5,
   text: $font-size-text,
 );
 
@@ -96,8 +104,9 @@ $font-sizes: (
   }
 
   --color-anchor: #{$link-color};
-  --font-family: "College";
-  --font-family-strong: "Propaganda";
+  --font-family: "Lato";
+  --font-family-heading: "Propaganda";
+  --font-family-bold: "Lato-Bold";
   --font-weight-strong: #{$font-weight-strong};
 
   @each $key, $size in $font-sizes {
@@ -105,4 +114,51 @@ $font-sizes: (
   }
 
   --border-radius: #{$border-radius};
+}
+
+/*
+=============================================================
+| SYMBOLS
+=============================================================
+*/
+
+@mixin squares(
+  $before: "true",
+  $after: "true",
+  $primary: $ABOUT_PRIMARY,
+  $secondary: $ABOUT_SECONDARY
+) {
+  position: relative;
+  @if ($before== "true") {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border: 4px solid $primary;
+      box-shadow: -0.75em 2.25em $secondary;
+      transform: translate(-100%, -100%);
+      background: $primary;
+    }
+  }
+  @if ($after== "true") {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border: 4px solid $primary;
+      box-shadow: -0.75em 2.25em $secondary;
+      transform: translate(-100%, -100%);
+      background: $primary;
+      left: unset;
+      top: unset;
+      right: 0;
+      bottom: 0;
+    }
+  }
 }

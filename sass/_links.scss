@@ -95,23 +95,33 @@
   }
 }
 
-.text-link {
+$SOLID_COLOR: #842929;
+$SOLID_COLOR_HOVER: #461414;
+@mixin solid-link(
+  $bg: $BACKGROUND_DEFAULT,
+  $color: $SOLID_COLOR,
+  $shadow: $color-secondary,
+  $hoverColor: $SOLID_COLOR_HOVER,
+  $hoverShadow: $shadow
+) {
   @include space("padding", 2);
   @include space("padding-top", 1);
   @include space("padding-bottom", 1);
   @include space("margin-left", 2);
   @include space("margin-right", 2);
+  text-decoration: none;
 
-  color: $color-bg-1;
-  background: $color-text-1;
-  box-shadow: 0.18em 0.18em var(--color-secondary);
+  color: $color;
+  background: $bg;
+  box-shadow: 0.18em 0.18em $shadow;
+  border-radius: 2px;
   text-align: center;
   transition: all 0.2s ease-in-out;
   line-height: 1;
   vertical-align: middle;
   display: flex;
   align-items: center;
-
+  font-family: var(--font-family-bold);
   svg {
     width: 1em;
     height: 1em;
@@ -123,14 +133,27 @@
   &:focus {
     @include space("padding-left", 3);
     @include space("padding-right", 3);
-    color: $color-bg-darker-1;
+    color: $hoverColor;
     transform: translate(-0.15em, -0.15em);
     transition: all 0.2s ease-in-out;
-    box-shadow: 0.3em 0.3em var(--color-secondary);
+    box-shadow: 0.3em 0.3em $hoverShadow;
   }
 
   &:focus {
     outline-color: transparent;
     outline-style: solid;
+  }
+}
+
+$COLOR_LINK: $ABOUT_SECONDARY;
+$COLOR_LINK_HOVER: #f3acc1;
+
+@mixin text_link($color: $COLOR_LINK, $hoverColor: $COLOR_LINK_HOVER) {
+  color: $color;
+  font-family: var(--font-family-bold);
+
+  transition: color 0.1s ease-in-out;
+  &:hover {
+    color: $hoverColor;
   }
 }

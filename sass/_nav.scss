@@ -1,4 +1,7 @@
+$color-bg-1: #ec6363 !default;
+
 nav {
+  background: $color-bg-1;
   ul {
     display: flex;
     flex-wrap: wrap;

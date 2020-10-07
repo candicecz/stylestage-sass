@@ -1,3 +1,5 @@
+$color-bg-darker-1: #d34e4e !default;
+
 header {
   --logomark-height: 3em;
 
@@ -6,11 +8,11 @@ header {
   place-items: center;
   padding: 10vh 2rem;
 
-  color: $color-text-1;
-  background: $color-bg-1;
+  background: $HEADER_PRIMARY;
 
   h2 {
     max-width: 30ch;
+    color: $BACKGROUND_DEFAULT;
   }
 
   .container {
@@ -20,12 +22,15 @@ header {
     h1 {
       @include space("margin-bottom", 2);
       flex: 1;
+      color: $BACKGROUND_DEFAULT;
+      text-shadow: 7px 8px $color-bg-darker-1;
     }
     h2 {
       @include space("margin-bottom", 2);
       flex: 1;
       max-width: unset;
       text-align: left;
+      text-shadow: 4px 6px $color-bg-darker-1;
     }
     p {
       @include space("margin-top", 4);
@@ -35,6 +40,11 @@ header {
       line-height: 2.5;
       display: flex;
       flex-direction: column;
+      color: $BACKGROUND_DEFAULT;
+
+      a {
+        @include solid-link();
+      }
     }
   }
   @media (min-width: $BREAKPOINT_SM) {

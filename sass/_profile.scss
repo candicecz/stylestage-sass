@@ -1,36 +1,46 @@
+$PROFILE_PRIMARY: #99d6bf;
+$PROFILE_SECONDARY: #3c455b;
+$PROFILE_TEXT: #ffffff;
 .profile {
-  width: 95vw;
-  max-width: 80ch;
-  margin: 1rem auto 10vh;
-  padding: 1.25rem;
   z-index: 1;
 
-  h4 {
-    margin: 0;
-    color: var(--color-secondary);
-    text-align: center;
-  }
-
   .container {
+    @include space(padding-bottom, 5);
     display: grid;
     justify-items: center;
     grid-gap: 1rem;
+    background-color: $PROFILE_SECONDARY;
+    h4 {
+      @include space(padding, 5);
+      width: 100%;
+      text-align: center;
+      background: $PROFILE_PRIMARY;
+      color: $PROFILE_SECONDARY;
+    }
 
     > a {
+      @include solid-link(
+        $PROFILE_TEXT,
+        $PROFILE_SECONDARY,
+        $PROFILE_PRIMARY,
+        #1f2942,
+        #5af1b8
+      );
+      @include space(margin-bottom, 1);
       min-height: 2em;
-      border: 2px solid currentColor;
-      color: var(--color-secondary);
     }
   }
 
   ul {
+    @include space(padding-left, 5);
+    @include space(padding-right, 5);
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     margin: 0;
-    padding: 0;
     list-style: none;
-
+    color: $BACKGROUND_DEFAULT;
     li {
       display: flex;
       padding: 0.45em;
@@ -38,7 +48,7 @@
       span:nth-child(1) {
         width: auto;
         margin-right: 0.25em;
-        font-weight: var(--font-weight-strong);
+        font-family: var(--font-family-heading);
       }
 
       span:nth-child(2) {
@@ -46,7 +56,7 @@
         word-break: break-word;
 
         a {
-          color: inherit;
+          @include text-link($PROFILE_PRIMARY, #5af1b8);
         }
       }
     }
@@ -58,9 +68,9 @@
     bottom: 2vmin;
     max-width: 30ch;
     margin-bottom: 0;
-    border-radius: var(--border-radius);
-    background-color: var(--color-light);
-    box-shadow: 0 2px 5px rgba(color(primary), 0.15);
+    border-radius: 4px;
+
+    overflow: hidden;
 
     ul {
       justify-content: unset;

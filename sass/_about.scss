@@ -1,17 +1,75 @@
+$BANNER_BG: $ABOUT_PRIMARY;
+$SECTION_BG: #27162d;
+$COLOR_TEXT: #7c75ff;
+
+$COLOR_H2: #fcfcfc;
+
+@mixin about_header() {
+  font-family: var(--font-family-heading);
+
+  color: $COLOR_H2;
+  background: $BANNER_BG;
+  text-shadow: 4px 6px $color-bg-darker-1;
+}
+
 #about {
+  background: $SECTION_BG;
+  display: flex;
+  flex-direction: column;
+
+  .container {
+    max-width: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    h2 {
+      @include space(padding, 10);
+      @include space(margin-bottom, 10);
+      @include about-header();
+      width: 100%;
+    }
+    > *:not(h2) {
+      max-width: 80%;
+    }
+    > p {
+      color: $COLOR_TEXT;
+    }
+    p {
+      a {
+        @include text_link();
+      }
+    }
+    blockquote {
+      p {
+        color: $SECTION_BG;
+        a {
+          color: var(--color-secondary);
+          &:hover {
+            color: $SECTION_BG;
+          }
+        }
+      }
+    }
+  }
   section:nth-child(2) {
     position: relative;
 
     p:nth-of-type(2) {
+      @include about-header();
+      @include space(margin, 2);
+      @include space(padding, 2);
+      font-size: var(--font-size-h4);
+      box-shadow: 4px 6px $ABOUT_SECONDARY;
+      text-shadow: unset;
+      width: 100%;
       align-self: center;
-      margin-top: 2rem;
-      color: var(--color-secondary);
-      font-size: 1.5em;
-      font-weight: var(--font-weight-strong);
       text-align: center;
     }
 
     ul {
+      @include squares("false", "true");
+
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -25,36 +83,11 @@
         background-color: var(--color-light);
       }
     }
-
-    &::before {
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      width: 100%;
-      height: 0;
-      padding-bottom: 100%;
-      transform: translate(-50%, -50%);
-      transition: 300ms transform ease-in;
-      background-image: radial-gradient(
-        rgba(255, 0, 0, 0) 20%,
-        #b3f8f1 20%,
-        #b3f8f1 25%,
-        rgba(255, 0, 0, 0) 25%,
-        rgba(255, 0, 0, 0) 30%,
-        #b3f8f1 30%,
-        #b3f8f1 40%,
-        rgba(255, 0, 0, 0) 40%,
-        rgba(255, 0, 0, 0) 45%,
-        #b3f8f1 45%,
-        #b3f8f1 50%,
-        rgba(255, 0, 0, 0) 50%
-      );
-      opacity: 0.8;
-      content: "";
-      z-index: -1;
-
-      @media (max-width: 35rem) {
-        transform: scale(2) translate(-25%, -25%);
+  }
+  @media (min-width: $BREAKPOINT_MD) {
+    .container {
+      > *:not(h2) {
+        max-width: 50%;
       }
     }
   }
