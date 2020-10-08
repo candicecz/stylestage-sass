@@ -1,4 +1,3 @@
-$PROFILE_PRIMARY: #99d6bf;
 $PROFILE_SECONDARY: #3c455b;
 $PROFILE_TEXT: #ffffff;
 .profile {
@@ -14,20 +13,21 @@ $PROFILE_TEXT: #ffffff;
       @include space(padding, 5);
       width: 100%;
       text-align: center;
-      background: $PROFILE_PRIMARY;
-      color: $PROFILE_SECONDARY;
+      background: $SECTION_PRIMARY;
+      color: $SECTION_DEFAULT;
     }
 
     > a {
       @include solid-link(
         $PROFILE_TEXT,
-        $PROFILE_SECONDARY,
-        $PROFILE_PRIMARY,
-        #1f2942,
-        #5af1b8
+        $SECTION_PRIMARY,
+        $SECTION_PRIMARY,
+        $SECTION_TEXT,
+        $BG_GREEN
       );
-      @include space(margin-bottom, 1);
-      min-height: 2em;
+
+      @include space("padding-top", 4);
+      @include space("padding-bottom", 4);
     }
   }
 
@@ -41,6 +41,7 @@ $PROFILE_TEXT: #ffffff;
     margin: 0;
     list-style: none;
     color: $BG_DEFAULT;
+
     li {
       display: flex;
       padding: 0.45em;
@@ -48,15 +49,14 @@ $PROFILE_TEXT: #ffffff;
       span:nth-child(1) {
         width: auto;
         margin-right: 0.25em;
-        font-family: var(--font-family-heading);
+        font-family: var(--font-family-black);
       }
 
       span:nth-child(2) {
         flex-grow: 1;
         word-break: break-word;
-
         a {
-          @include text-link($PROFILE_PRIMARY, #5af1b8);
+          @include text-link($SECTION_DEFAULT, $BG_GREEN);
         }
       }
     }

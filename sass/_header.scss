@@ -21,14 +21,14 @@ header {
       @include space("margin-bottom", 2);
       flex: 1;
       color: $BG_DEFAULT;
-      text-shadow: 7px 8px $ABOUT_DARK;
+      text-shadow: 7px 8px $HEADER_DARK;
     }
     h2 {
       @include space("margin-bottom", 2);
       flex: 1;
       max-width: unset;
       text-align: left;
-      text-shadow: 4px 6px $ABOUT_DARK;
+      text-shadow: 4px 6px $HEADER_DARK;
     }
     p {
       @include space("margin-top", 4);
@@ -43,6 +43,7 @@ header {
       color: #000;
       a {
         @include solid-link();
+        font-family: var(--font-family-bold);
       }
     }
   }

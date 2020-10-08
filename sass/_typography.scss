@@ -66,6 +66,7 @@ strong {
 
 a {
   color: var(--color-anchor);
+  font-family: var(--font-family-bold);
 }
 
 blockquote {
@@ -109,5 +110,10 @@ blockquote {
 @mixin header($color: $BG_DEFAULT, $shadow: $HEADER_PRIMARY) {
   font-family: var(--font-family-heading);
   color: $color;
-  text-shadow: 4px 6px $shadow;
+  text-shadow: 4px 4px $shadow;
+}
+
+@mixin font-ry() {
+  font-family: "RealYoung";
+  letter-spacing: 0.1rem; // improves legibility slightly
 }

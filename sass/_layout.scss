@@ -45,10 +45,11 @@ article,
   justify-content: center;
   align-items: center;
   margin-bottom: 5vh;
-  margin-top: 5vh;
   h2 {
     @include space(padding, 10);
     @include space(margin-bottom, 10);
+    @include header($SECTION_DEFAULT, $SECTION_SECONDARY);
+    background: $SECTION_PRIMARY;
     width: 100%;
   }
   > *:not(h2) {

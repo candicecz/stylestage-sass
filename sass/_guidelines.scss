@@ -21,7 +21,7 @@ $BANNER_HEIGHT: 55rem;
       }
     }
     h2 {
-      @include header($BG_DEFAULT, $ABOUT_DARK);
+      @include header($BG_DEFAULT, $HEADER_DARK);
       background: $HEADER_PRIMARY;
       text-align: center;
     }
@@ -44,9 +44,15 @@ $BANNER_HEIGHT: 55rem;
       }
     }
     .link-guidelines {
-      @include solid-link(#fff, #000, $GUIDELINES_TEXT, $GUIDELINES_TEXT);
+      @include solid-link(
+        $GUIDELINES_TEXT,
+        $BG_DEFAULT,
+        #000,
+        $GUIDELINES_PRIMARY
+      );
       @include space("padding", 3);
-      text-shadow: 2px 2px $GUIDELINES_PRIMARY;
+      @include font-ry();
+
       text-transform: uppercase;
     }
   }

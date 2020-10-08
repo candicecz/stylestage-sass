@@ -9,20 +9,27 @@ $color-primary-alt: #6f6ffd !default;
 $color-secondary: #d42257 !default;
 $color-background: #d2fbf7 !default;
 $BG_DEFAULT: #fff6ed !default;
+$BG_GREEN: #5af1b8;
+$GREY_200: #c9d0d8;
 $TEXT_DEFAULT: #363636 !default;
 
 // HEADER
 $HEADER_PRIMARY: #ec6363;
+$HEADER_DARK: #d34e4e !default;
 
-// ABOUT
-$ABOUT_PRIMARY: #5a50f3;
-$ABOUT_SECONDARY: #ff4a80;
-$ABOUT_DARK: #d34e4e !default;
+// SECTIONS
+$SECTION_PRIMARY: #5a50f3 !default;
+$SECTION_SECONDARY: #ff4a80 !default;
+$SECTION_DARK: #d42257 !default;
+$SECTION_BG: #27162d !default;
+$SECTION_TEXT: #7c75ff !default;
+$SECTION_DEFAULT: #fcfcfc !default;
 
 $brand-colors: (
   primary: $color-primary,
   primary-alt: $color-primary-alt,
   secondary: $color-secondary,
+  bg-green: $BG_GREEN,
 ) !default;
 
 $color-body: scale-color(
@@ -108,6 +115,7 @@ $font-sizes: (
   --font-family: "Lato";
   --font-family-heading: "Propaganda";
   --font-family-bold: "Lato-Bold";
+  --font-family-black: "Lato-Black";
   --font-weight-strong: #{$font-weight-strong};
 
   @each $key, $size in $font-sizes {
@@ -126,8 +134,8 @@ $font-sizes: (
 @mixin squares(
   $before: "true",
   $after: "true",
-  $primary: $ABOUT_PRIMARY,
-  $secondary: $ABOUT_SECONDARY
+  $primary: $SECTION_PRIMARY,
+  $secondary: $SECTION_SECONDARY
 ) {
   position: relative;
   @if ($before== "true") {
