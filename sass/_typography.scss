@@ -79,7 +79,7 @@ blockquote {
   padding: 0;
   margin: 3rem 0;
   color: $TEXT_DEFAULT;
-  background: $BACKGROUND_DEFAULT;
+  background: $BG_DEFAULT;
   border-radius: 4px;
 
   > * {
@@ -90,7 +90,7 @@ blockquote {
     @include space(padding, 4);
     font-size: var(--font-size-h5);
     margin-bottom: 0;
-    background: $BACKGROUND_DEFAULT;
+    background: $BG_DEFAULT;
 
     strong {
       font-family: "Lato-Bold";
@@ -104,4 +104,10 @@ blockquote {
     font-size: var(--font-size-h4);
     font-weight: var(--font-weight-strong);
   }
+}
+
+@mixin header($color: $BG_DEFAULT, $shadow: $HEADER_PRIMARY) {
+  font-family: var(--font-family-heading);
+  color: $color;
+  text-shadow: 4px 6px $shadow;
 }

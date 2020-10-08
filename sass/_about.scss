@@ -1,16 +1,7 @@
 $BANNER_BG: $ABOUT_PRIMARY;
 $SECTION_BG: #27162d;
 $COLOR_TEXT: #7c75ff;
-
 $COLOR_H2: #fcfcfc;
-
-@mixin about_header() {
-  font-family: var(--font-family-heading);
-
-  color: $COLOR_H2;
-  background: $BANNER_BG;
-  text-shadow: 4px 6px $color-bg-darker-1;
-}
 
 #about {
   background: $SECTION_BG;
@@ -18,20 +9,14 @@ $COLOR_H2: #fcfcfc;
   flex-direction: column;
 
   .container {
+    @include basic-container();
     max-width: unset;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-top: 0;
     h2 {
-      @include space(padding, 10);
-      @include space(margin-bottom, 10);
-      @include about-header();
-      width: 100%;
+      @include header($COLOR_H2, $ABOUT_DARK);
+      background: $BANNER_BG;
     }
-    > *:not(h2) {
-      max-width: 80%;
-    }
+
     > p {
       color: $COLOR_TEXT;
     }
@@ -56,9 +41,11 @@ $COLOR_H2: #fcfcfc;
     position: relative;
 
     p:nth-of-type(2) {
-      @include about-header();
+      @include header($COLOR_H2, $ABOUT_DARK);
       @include space(margin, 2);
       @include space(padding, 2);
+      background: $BANNER_BG;
+
       font-size: var(--font-size-h4);
       box-shadow: 4px 6px $ABOUT_SECONDARY;
       text-shadow: unset;

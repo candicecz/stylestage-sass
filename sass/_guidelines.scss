@@ -1,41 +1,86 @@
+$GUIDELINES_PRIMARY: #c9d0d8;
+$GUIDELINES_SECONDARY: #fd2f01;
+$GUIDELINES_TEXT: #413937;
+
+$BANNER_WIDTH: 10rem;
+$BANNER_HEIGHT: 55rem;
+
 #guidelines {
-  h3 {
-    display: inline-block;
-    transform: rotate(-8deg) translateX(-10%);
-    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
-
-    @supports (background-clip: text) or (-webkit-background-clip: text) {
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+  background: $GUIDELINES_PRIMARY;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .container {
+    @include basic-container();
+    margin-top: 0;
+    p {
+      @include space("margin", 4);
+      a {
+        @include text-link($GUIDELINES_TEXT, $GUIDELINES_SECONDARY);
+      }
     }
+    h2 {
+      @include header($BG_DEFAULT, $ABOUT_DARK);
+      background: $HEADER_PRIMARY;
+      text-align: center;
+    }
+    > :not(h2) {
+      @include space("padding-top", 4);
+      @include space("padding-bottom", 4);
+      color: $GUIDELINES_TEXT;
+    }
+    h3 {
+      @include space("margin", 4);
 
-    @media (min-width: 120ch) {
-      transform: rotate(-8deg) translateX(-30%);
+      display: inline-block;
+      transform: rotate(-8deg) translateX(-10%);
+      background: $GUIDELINES_TEXT;
+      color: $BG_DEFAULT;
+      padding: 1rem 2rem;
+
+      @media (min-width: 120ch) {
+        transform: rotate(-8deg) translateX(-30%);
+      }
+    }
+    .link-guidelines {
+      @include solid-link(#fff, #000, $GUIDELINES_TEXT, $GUIDELINES_TEXT);
+      @include space("padding", 3);
+      text-shadow: 2px 2px $GUIDELINES_PRIMARY;
+      text-transform: uppercase;
     }
   }
 
-  @supports (background-clip: text) or (-webkit-background-clip: text) {
-    p:nth-of-type(2) {
-      position: relative;
+  @media (min-width: $BREAKPOINT_MD) {
+    position: relative;
+    min-height: $BANNER_HEIGHT;
+    .container {
+      margin-top: 5vh;
+      margin-top: 5vh;
+      a {
+        @include space("margin-top", 7);
+        @include space("margin-bottom", 7);
+      }
 
-      &::before {
+      h2 {
+        padding: 0 5rem;
+        line-height: 0;
+        width: $BANNER_WIDTH;
+        height: 100%;
         position: absolute;
         top: 0;
         left: 0;
-        transform: rotate(4deg) translate(4.75rem, -3.5rem);
-        transform-origin: left center;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: var(--color-primary-alt);
-        font-size: 0.9em;
-        font-weight: normal;
-        content: "← Whoa, text gradients!";
+        margin: 0;
+        font-size: var(--font-size-h2);
+        writing-mode: tb-rl;
+        text-orientation: upright;
+        padding-top: 5vh;
+        text-align: start;
+      }
+      > :not(h2),
+      .link-guidelines {
+        margin-left: $BANNER_WIDTH + 2rem;
       }
     }
-  }
-
-  .container > a {
-    align-self: center;
   }
 }

@@ -97,8 +97,9 @@
 
 $SOLID_COLOR: #842929;
 $SOLID_COLOR_HOVER: #461414;
+
 @mixin solid-link(
-  $bg: $BACKGROUND_DEFAULT,
+  $bg: $BG_DEFAULT,
   $color: $SOLID_COLOR,
   $shadow: $color-secondary,
   $hoverColor: $SOLID_COLOR_HOVER,
@@ -109,8 +110,8 @@ $SOLID_COLOR_HOVER: #461414;
   @include space("padding-bottom", 1);
   @include space("margin-left", 2);
   @include space("margin-right", 2);
-  text-decoration: none;
 
+  text-decoration: none;
   color: $color;
   background: $bg;
   box-shadow: 0.18em 0.18em $shadow;
@@ -122,12 +123,6 @@ $SOLID_COLOR_HOVER: #461414;
   display: flex;
   align-items: center;
   font-family: var(--font-family-bold);
-  svg {
-    width: 1em;
-    height: 1em;
-    margin-right: 0.25em;
-    fill: currentColor;
-  }
 
   &:hover,
   &:focus {
@@ -152,8 +147,9 @@ $COLOR_LINK_HOVER: #f3acc1;
   color: $color;
   font-family: var(--font-family-bold);
 
-  transition: color 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
   &:hover {
     color: $hoverColor;
+    transition: all 0.1s ease-in-out;
   }
 }

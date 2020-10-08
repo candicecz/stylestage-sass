@@ -8,7 +8,7 @@ $color-primary: #3a00ff !default;
 $color-primary-alt: #6f6ffd !default;
 $color-secondary: #d42257 !default;
 $color-background: #d2fbf7 !default;
-$BACKGROUND_DEFAULT: #fff6ed !default;
+$BG_DEFAULT: #fff6ed !default;
 $TEXT_DEFAULT: #363636 !default;
 
 // HEADER
@@ -17,6 +17,7 @@ $HEADER_PRIMARY: #ec6363;
 // ABOUT
 $ABOUT_PRIMARY: #5a50f3;
 $ABOUT_SECONDARY: #ff4a80;
+$ABOUT_DARK: #d34e4e !default;
 
 $brand-colors: (
   primary: $color-primary,
@@ -82,7 +83,7 @@ $sizes: 0rem, 0.25rem, 0.5rem, 0.75rem, 1rem, 1.25rem, 1.5rem, 2rem, 2.5rem,
 */
 $font-weight-strong: 500 !default;
 $font-size-h1: 30rem !default;
-$font-size-h2: 4rem !default;
+$font-size-h2: 6rem !default;
 $font-size-h3: 2rem !default;
 $font-size-h4: 1.35rem !default;
 $font-size-h5: 1.25rem !default;

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Propaganda";
   src: url("../fonts/propaganda.ttf") format("truetype");
@@ -60,7 +59,7 @@
   --font-family-bold: "Lato-Bold";
   --font-weight-strong: 500;
   --font-size-h1: 30rem;
-  --font-size-h2: 4rem;
+  --font-size-h2: 6rem;
   --font-size-h3: 2rem;
   --font-size-h4: 1.35rem;
   --font-size-h5: 1.25rem;
@@ -270,15 +269,12 @@ article section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 5vh;
-  margin-top: 5vh;
 }
 
 article .container,
 .page-footer .container,
 #styles .container {
   width: 100%;
-  max-width: 80ch;
 }
 
 .page-footer ul,
@@ -454,6 +450,8 @@ header .container p {
   display: flex;
   flex-direction: column;
   color: #fff6ed;
+  font-family: var(--font-family-bold);
+  color: #000;
 }
 header .container p a {
   padding: 0.5rem;
@@ -473,12 +471,6 @@ header .container p a {
   display: flex;
   align-items: center;
   font-family: var(--font-family-bold);
-}
-header .container p a svg {
-  width: 1em;
-  height: 1em;
-  margin-right: 0.25em;
-  fill: currentColor;
 }
 header .container p a:hover, header .container p a:focus {
   padding-left: 0.75rem;
@@ -504,23 +496,27 @@ header .container p a:focus {
   flex-direction: column;
 }
 #about .container {
-  max-width: unset;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  max-width: unset;
   margin-top: 0;
 }
 #about .container h2 {
   padding: 4rem;
   margin-bottom: 4rem;
-  font-family: var(--font-family-heading);
-  color: #fcfcfc;
-  background: #5a50f3;
-  text-shadow: 4px 6px #d34e4e;
   width: 100%;
 }
 #about .container > *:not(h2) {
   max-width: 80%;
+}
+#about .container h2 {
+  font-family: var(--font-family-heading);
+  color: #fcfcfc;
+  text-shadow: 4px 6px #d34e4e;
+  background: #5a50f3;
 }
 #about .container > p {
   color: #7c75ff;
@@ -528,10 +524,11 @@ header .container p a:focus {
 #about .container p a {
   color: #ff4a80;
   font-family: var(--font-family-bold);
-  transition: color 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 #about .container p a:hover {
   color: #f3acc1;
+  transition: all 0.1s ease-in-out;
 }
 #about .container blockquote p {
   color: #27162d;
@@ -548,10 +545,10 @@ header .container p a:focus {
 #about section:nth-child(2) p:nth-of-type(2) {
   font-family: var(--font-family-heading);
   color: #fcfcfc;
-  background: #5a50f3;
   text-shadow: 4px 6px #d34e4e;
   margin: 0.5rem;
   padding: 0.5rem;
+  background: #5a50f3;
   font-size: var(--font-size-h4);
   box-shadow: 4px 6px #ff4a80;
   text-shadow: unset;
@@ -595,46 +592,132 @@ header .container p a:focus {
   }
 }
 
-#guidelines .container {
-  margin: 0;
+#guidelines {
+  background: #c9d0d8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-#guidelines h3 {
+#guidelines .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
+  margin-top: 0;
+}
+#guidelines .container h2 {
+  padding: 4rem;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+#guidelines .container > *:not(h2) {
+  max-width: 80%;
+}
+#guidelines .container p {
+  margin: 1rem;
+}
+#guidelines .container p a {
+  color: #413937;
+  font-family: var(--font-family-bold);
+  transition: all 0.1s ease-in-out;
+}
+#guidelines .container p a:hover {
+  color: #fd2f01;
+  transition: all 0.1s ease-in-out;
+}
+#guidelines .container h2 {
+  font-family: var(--font-family-heading);
+  color: #fff6ed;
+  text-shadow: 4px 6px #d34e4e;
+  background: #ec6363;
+  text-align: center;
+}
+#guidelines .container > :not(h2) {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: #413937;
+}
+#guidelines .container h3 {
+  margin: 1rem;
   display: inline-block;
   transform: rotate(-8deg) translateX(-10%);
-  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
-}
-@supports (background-clip: text) or (-webkit-background-clip: text) {
-  #guidelines h3 {
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+  background: #413937;
+  color: #fff6ed;
+  padding: 1rem 2rem;
 }
 @media (min-width: 120ch) {
-  #guidelines h3 {
+  #guidelines .container h3 {
     transform: rotate(-8deg) translateX(-30%);
   }
 }
-@supports (background-clip: text) or (-webkit-background-clip: text) {
-  #guidelines p:nth-of-type(2) {
+#guidelines .container .link-guidelines {
+  padding: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  text-decoration: none;
+  color: #000;
+  background: #fff;
+  box-shadow: 0.18em 0.18em #413937;
+  border-radius: 2px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  line-height: 1;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-family-bold);
+  padding: 0.75rem;
+  text-shadow: 2px 2px #c9d0d8;
+  text-transform: uppercase;
+}
+#guidelines .container .link-guidelines:hover, #guidelines .container .link-guidelines:focus {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  color: #413937;
+  transform: translate(-0.15em, -0.15em);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0.3em 0.3em #413937;
+}
+#guidelines .container .link-guidelines:focus {
+  outline-color: transparent;
+  outline-style: solid;
+}
+@media (min-width: 48em) {
+  #guidelines {
     position: relative;
+    min-height: 55rem;
   }
-  #guidelines p:nth-of-type(2)::before {
+  #guidelines .container {
+    margin-top: 5vh;
+    margin-top: 5vh;
+  }
+  #guidelines .container a {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  #guidelines .container h2 {
+    padding: 0 5rem;
+    line-height: 0;
+    width: 10rem;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    transform: rotate(4deg) translate(4.75rem, -3.5rem);
-    transform-origin: left center;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: var(--color-primary-alt);
-    font-size: 0.9em;
-    font-weight: normal;
-    content: "← Whoa, text gradients!";
+    margin: 0;
+    font-size: var(--font-size-h2);
+    writing-mode: tb-rl;
+    text-orientation: upright;
+    padding-top: 5vh;
+    text-align: start;
   }
-}
-#guidelines .container > a {
-  align-self: center;
+  #guidelines .container > :not(h2),
+#guidelines .container .link-guidelines {
+    margin-left: 12rem;
+  }
 }
 
 #files {
@@ -787,12 +870,6 @@ header .container p a:focus {
   margin-bottom: 0.25rem;
   min-height: 2em;
 }
-.profile .container > a svg {
-  width: 1em;
-  height: 1em;
-  margin-right: 0.25em;
-  fill: currentColor;
-}
 .profile .container > a:hover, .profile .container > a:focus {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -832,10 +909,11 @@ header .container p a:focus {
 .profile ul li span:nth-child(2) a {
   color: #99d6bf;
   font-family: var(--font-family-bold);
-  transition: color 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 .profile ul li span:nth-child(2) a:hover {
   color: #5af1b8;
+  transition: all 0.1s ease-in-out;
 }
 @media (min-width: 180ch) {
   .profile {
