@@ -41,6 +41,7 @@
         $SECTION_TEXT
       );
       @include font-ry();
+      white-space: nowrap;
     }
 
     .link-codepen {
