@@ -1,11 +1,11 @@
-[class^="link"]:not(.link-codepen) {
+[class^="link"]:not(.link-codepen):not(.page-footer li) {
   min-height: 3em;
   background-color: var(--color-primary);
   color: #fff;
   box-shadow: 0.18em 0.18em $SECTION_DARK;
 }
 
-[class^="link"]:not(.link-codepen),
+[class^="link"]:not(.link-codepen):not(.page-footer li),
 .profile .container > a {
   display: inline-flex;
   align-items: center;
@@ -31,12 +31,6 @@
 }
 
 // stylelint-disable-next-line no-descending-specificity
-.page-footer [class^="link"] {
-  width: 100%;
-  min-height: 2.5em;
-  background-color: var(--color-background);
-  color: var(--color-primary);
-}
 
 .link-codepen {
   @include space(margin-top, 2);
@@ -60,14 +54,6 @@
   //   font-size: 0.85em;
   //   content: "Jump right in";
   // }
-}
-
-.link-allstyles {
-  font-size: var(--font-size-h4);
-
-  @media (max-width: 400px) {
-    margin-left: 6rem;
-  }
 }
 
 $SOLID_COLOR: #842929;
@@ -191,7 +177,7 @@ body {
 
 $GITHUB_LINK_WIDTH: 7rem;
 
-.link-github[class^="link"] {
+header .link-github[class^="link"] {
   @include solid-link();
   flex-direction: column;
   font-family: "RealYoung";
@@ -216,5 +202,92 @@ $GITHUB_LINK_WIDTH: 7rem;
   &:focus {
     padding: 0;
     padding-bottom: 1rem;
+  }
+}
+
+$MATRYOSHKA_MAX_HEIGHT: 7rem;
+$MATRYOSHKA_MIN_HEIGHT: 2rem;
+@mixin nav_link() {
+  @include solid-link(
+    $BG_DEFAULT,
+    $SECTION_BG,
+    $SECTION_BG,
+    $SECTION_BG,
+    $SECTION_PRIMARY
+  );
+  min-width: 125px;
+  max-width: 200px;
+  position: relative;
+  height: 3rem;
+  margin: 0.25rem;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+
+  &:hover {
+    border-bottom: 2px solid $SECTION_BG;
+    border-right: 2px solid $SECTION_BG;
+    transform: unset;
+  }
+  a {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $BG_DEFAULT;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:nth-child(1) {
+    &:after {
+      content: "";
+      width: $MATRYOSHKA_MIN_HEIGHT + 6rem;
+      height: $MATRYOSHKA_MIN_HEIGHT + 6rem;
+    }
+  }
+  &:nth-child(2) {
+    &:after {
+      content: "";
+      width: $MATRYOSHKA_MIN_HEIGHT + 5rem;
+      height: $MATRYOSHKA_MIN_HEIGHT + 5rem;
+    }
+  }
+  &:nth-child(3) {
+    &:after {
+      content: "";
+      width: $MATRYOSHKA_MIN_HEIGHT + 4rem;
+      height: $MATRYOSHKA_MIN_HEIGHT + 4rem;
+    }
+  }
+  &:nth-child(4) {
+    &:after {
+      content: "";
+      width: $MATRYOSHKA_MIN_HEIGHT + 3.5rem;
+      height: $MATRYOSHKA_MIN_HEIGHT + 3.5rem;
+    }
+  }
+  &:nth-child(5) {
+    &:after {
+      content: "";
+      width: $MATRYOSHKA_MIN_HEIGHT + 3rem;
+      height: $MATRYOSHKA_MIN_HEIGHT + 3rem;
+    }
+  }
+  &:nth-child(6) {
+    &:after {
+      content: "";
+      width: $MATRYOSHKA_MIN_HEIGHT + 2.5rem;
+      height: $MATRYOSHKA_MIN_HEIGHT + 2.5rem;
+    }
+  }
+  &:after {
+    content: "";
+    background-image: url("/assets/matryoshka.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: 0;
   }
 }

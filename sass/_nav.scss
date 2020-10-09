@@ -1,7 +1,8 @@
 $MATRYOSHKA_MAX_HEIGHT: 7rem;
 $MATRYOSHKA_MIN_HEIGHT: 2rem;
-nav {
-  background: $GREY_200;
+
+nav,
+.page-footer {
   ul {
     @include space(padding, 7);
     display: flex;
@@ -28,22 +29,22 @@ nav {
         border-right: 2px solid $SECTION_BG;
         transform: unset;
       }
-    }
-
-    a {
-      display: inline-grid;
-      padding: 0.5rem;
-      font-size: 1.25rem;
-      text-decoration: none;
-      color: $SECTION_BG;
-      width: 100%;
-      height: 100%;
-    }
-
-    li {
-      margin: 0.25rem;
+      a {
+        display: inline-grid;
+        padding: 0.5rem;
+        font-size: 1.25rem;
+        text-decoration: none;
+        color: $SECTION_BG;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
+}
+
+nav {
+  background: $GREY_200;
+
   @media (min-width: $BREAKPOINT_SM) {
     ul {
       li {
@@ -69,68 +70,7 @@ nav {
       width: 100%;
 
       li {
-        min-width: 125px;
-        max-width: 200px;
-        position: relative;
-        a {
-          position: absolute;
-          z-index: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: $BG_DEFAULT;
-        }
-
-        &:nth-child(1) {
-          &:after {
-            content: "";
-            width: $MATRYOSHKA_MIN_HEIGHT + 6rem;
-            height: $MATRYOSHKA_MIN_HEIGHT + 6rem;
-          }
-        }
-        &:nth-child(2) {
-          &:after {
-            content: "";
-            width: $MATRYOSHKA_MIN_HEIGHT + 5rem;
-            height: $MATRYOSHKA_MIN_HEIGHT + 5rem;
-          }
-        }
-        &:nth-child(3) {
-          &:after {
-            content: "";
-            width: $MATRYOSHKA_MIN_HEIGHT + 4rem;
-            height: $MATRYOSHKA_MIN_HEIGHT + 4rem;
-          }
-        }
-        &:nth-child(4) {
-          &:after {
-            content: "";
-            width: $MATRYOSHKA_MIN_HEIGHT + 3.5rem;
-            height: $MATRYOSHKA_MIN_HEIGHT + 3.5rem;
-          }
-        }
-        &:nth-child(5) {
-          &:after {
-            content: "";
-            width: $MATRYOSHKA_MIN_HEIGHT + 3rem;
-            height: $MATRYOSHKA_MIN_HEIGHT + 3rem;
-          }
-        }
-        &:nth-child(6) {
-          &:after {
-            content: "";
-            width: $MATRYOSHKA_MIN_HEIGHT + 2.5rem;
-            height: $MATRYOSHKA_MIN_HEIGHT + 2.5rem;
-          }
-        }
-        &:after {
-          content: "";
-          background-image: url("/assets/matryoshka.svg");
-          background-repeat: no-repeat;
-          background-position: center;
-          position: absolute;
-          bottom: 0;
-        }
+        @include nav_link();
       }
     }
   }

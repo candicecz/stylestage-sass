@@ -1,8 +1,9 @@
 // stylelint-disable no-descending-specificity
 body {
-  background-color: var(--color-background);
-  color: var(--color-text);
+  background-color: #fff;
+  color: #000;
   font-family: var(--font-family);
+  min-width: 300px;
 }
 
 main {

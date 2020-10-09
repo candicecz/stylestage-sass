@@ -56,11 +56,6 @@
     &:hover {
       background-color: $HEADER_PRIMARY;
       transition: all 0.2s linear;
-
-      > span {
-        color: $BG_DEFAULT;
-        background-color: $TEXT_DEFAULT;
-      }
     }
   }
 }
@@ -79,7 +74,7 @@
   flex-direction: column;
   margin-top: 0;
   margin-bottom: 0;
-  background: $GREY_200;
+  background: $BG_DEFAULT;
   padding-bottom: 4rem;
 
   .container {

@@ -22,7 +22,6 @@
   }
   .container:nth-child(2) {
     @include squares();
-    @include space("padding", 7);
     background: $BG_DEFAULT;
     h3 {
       @include header($SECTION_DEFAULT, $HEADER_DARK);
@@ -52,6 +51,11 @@
           color: $SECTION_BG;
         }
       }
+    }
+  }
+  @media (min-width: $BREAKPOINT_SM) {
+    .container:nth-child(2) {
+      @include space("padding", 7);
     }
   }
 

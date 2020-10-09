@@ -2,7 +2,7 @@
   display: inline-grid;
   min-height: var(--logomark-height);
   padding: var(--logomark-padding);
-  border: 0.16em solid var(--color-primary);
-  box-shadow: 0.12em 0.12em $SECTION_DARK;
+  border: 0.16em solid $HEADER_PRIMARY;
+  box-shadow: 0.12em 0.12em $BG_YELLOW;
   place-content: center;
 }
