@@ -1,29 +1,8 @@
-.skip-link {
-  position: absolute;
-  top: auto;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  background-color: var(--color-secondary);
-  color: #fff;
-  font-size: 1.125rem;
-  overflow: hidden;
-
-  &:focus {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-    padding: 0.5em;
-  }
-}
-
 [class^="link"]:not(.link-codepen) {
   min-height: 3em;
   background-color: var(--color-primary);
   color: #fff;
-  box-shadow: 0.18em 0.18em var(--color-secondary);
+  box-shadow: 0.18em 0.18em $SECTION_DARK;
 }
 
 [class^="link"]:not(.link-codepen),
@@ -42,7 +21,7 @@
   &:hover,
   &:focus {
     transform: translate(-0.15em, -0.15em);
-    box-shadow: 0.3em 0.3em var(--color-secondary);
+    box-shadow: 0.3em 0.3em $SECTION_DARK;
   }
 
   &:focus {
@@ -91,22 +70,13 @@
   }
 }
 
-.link-github {
-  svg {
-    width: 1em;
-    height: 1em;
-    margin-right: 0.25em;
-    fill: currentColor;
-  }
-}
-
 $SOLID_COLOR: #842929;
 $SOLID_COLOR_HOVER: #461414;
 
 @mixin solid-link(
   $bg: $BG_DEFAULT,
   $color: $SOLID_COLOR,
-  $shadow: $color-secondary,
+  $shadow: $HEADER_DARK,
   $hoverColor: $SOLID_COLOR_HOVER,
   $hoverShadow: $shadow
 ) {
@@ -131,8 +101,8 @@ $SOLID_COLOR_HOVER: #461414;
 
   &:hover,
   &:focus {
-    @include space("padding-left", 3);
-    @include space("padding-right", 3);
+    @include space("padding-left", 4);
+    @include space("padding-right", 4);
     color: $hoverColor;
     transform: translate(-0.15em, -0.15em);
     transition: all 0.2s ease-in-out;
@@ -156,5 +126,95 @@ $COLOR_LINK_HOVER: #f3acc1;
   &:hover {
     color: $hoverColor;
     transition: all 0.1s ease-in-out;
+  }
+}
+
+$SKIP_LINK_SVG_WIDTH: 4rem;
+
+body {
+  .skip-link {
+    @include text_link();
+    @include space(padding, 4);
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: $SKIP_LINK_SVG_WIDTH;
+    color: #fff;
+    font-size: 1.125rem;
+    display: flex;
+    align-items: center;
+    background: $BG_DEFAULT;
+    color: $TEXT_DEFAULT;
+    white-space: nowrap;
+
+    &:focus {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: $SKIP_LINK_SVG_WIDTH;
+    }
+    &:hover {
+      color: $SECTION_DARK;
+    }
+
+    &:before {
+      content: "";
+      width: 3rem;
+      height: 3rem;
+      background-image: url("/assets/megaphone.svg");
+      background-repeat: no-repeat;
+      background-color: $BG_DEFAULT;
+    }
+  }
+
+  @media (min-width: $BREAKPOINT_SM) {
+    .skip-link {
+      width: $SKIP_LINK_SVG_WIDTH;
+
+      &:hover {
+        width: unset;
+        padding-left: $SKIP_LINK_SVG_WIDTH + 1;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:before {
+        position: absolute;
+        left: 0;
+        width: $SKIP_LINK_SVG_WIDTH;
+        height: $SKIP_LINK_SVG_WIDTH;
+      }
+    }
+  }
+}
+
+$GITHUB_LINK_WIDTH: 7rem;
+
+.link-github[class^="link"] {
+  @include solid-link();
+  flex-direction: column;
+  font-family: "RealYoung";
+  background-color: $BG_DEFAULT;
+  border: 4px solid #fdeda4;
+  padding: 0;
+  margin-left: 0;
+  padding-bottom: 1rem;
+
+  &:before {
+    content: "";
+    background-position: center;
+    width: 100%;
+    min-width: 11rem;
+    height: $GITHUB_LINK_WIDTH;
+    background-color: $HEADER_DARK;
+    background-image: url("/assets/github_star.svg");
+    background-repeat: no-repeat;
+    padding: 0;
+  }
+  &:hover,
+  &:focus {
+    padding: 0;
+    padding-bottom: 1rem;
   }
 }

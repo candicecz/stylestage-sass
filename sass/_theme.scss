@@ -6,7 +6,6 @@
 
 $color-primary: #3a00ff !default;
 $color-primary-alt: #6f6ffd !default;
-$color-secondary: #d42257 !default;
 $color-background: #d2fbf7 !default;
 $BG_DEFAULT: #fff6ed !default;
 $BG_GREEN: #5af1b8;
@@ -15,7 +14,7 @@ $TEXT_DEFAULT: #363636 !default;
 
 // HEADER
 $HEADER_PRIMARY: #ec6363;
-$HEADER_DARK: #d34e4e !default;
+$HEADER_DARK: #b12f2f !default;
 
 // SECTIONS
 $SECTION_PRIMARY: #5a50f3 !default;
@@ -28,7 +27,7 @@ $SECTION_DEFAULT: #fcfcfc !default;
 $brand-colors: (
   primary: $color-primary,
   primary-alt: $color-primary-alt,
-  secondary: $color-secondary,
+  secondary: $SECTION_DARK,
   bg-green: $BG_GREEN,
 ) !default;
 

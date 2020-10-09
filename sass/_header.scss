@@ -2,16 +2,9 @@ header {
   --logomark-height: 3em;
 
   display: grid;
-  min-height: 40vh;
   place-items: center;
-  padding: 10vh 2rem;
-
   background: $HEADER_PRIMARY;
-
-  h2 {
-    max-width: 30ch;
-    color: $BG_DEFAULT;
-  }
+  padding: 10vh 1rem;
 
   .container {
     display: flex;
@@ -22,11 +15,15 @@ header {
       flex: 1;
       color: $BG_DEFAULT;
       text-shadow: 7px 8px $HEADER_DARK;
+      font-size: 4rem;
     }
     h2 {
       @include space("margin-bottom", 2);
       flex: 1;
       max-width: unset;
+      width: 100%;
+      color: $BG_DEFAULT;
+      min-width: 100%;
       text-align: left;
       text-shadow: 4px 6px $HEADER_DARK;
     }
@@ -38,19 +35,50 @@ header {
       line-height: 2.5;
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       color: $BG_DEFAULT;
       font-family: var(--font-family-bold);
       color: #000;
+      text-transform: uppercase;
       a {
         @include solid-link();
+        @include space(padding, 4);
+        @include space(margin, 0);
         font-family: var(--font-family-bold);
       }
     }
+    .link-github {
+      margin-top: 2rem;
+      align-self: center;
+    }
   }
   @media (min-width: $BREAKPOINT_SM) {
+    padding: 5vh 2rem;
+
+    flex-direction: column;
     .container {
+      h1 {
+        font-size: 6rem;
+      }
+
       p {
-        flex-direction: row;
+        flex: 1;
+      }
+    }
+  }
+  @media (min-width: $BREAKPOINT_MD) {
+    min-height: 90vh;
+    .container {
+      h1 {
+        font-size: 13rem;
+      }
+      h2 {
+      }
+      p {
+        flex-direction: column;
+        a {
+          @include space(margin, 2);
+        }
       }
     }
   }

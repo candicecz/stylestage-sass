@@ -20,7 +20,7 @@
       p {
         color: $SECTION_BG;
         a {
-          color: var(--color-secondary);
+          color: $SECTION_DARK;
           &:hover {
             color: $SECTION_BG;
           }

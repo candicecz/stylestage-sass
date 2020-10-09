@@ -3,6 +3,6 @@
   min-height: var(--logomark-height);
   padding: var(--logomark-padding);
   border: 0.16em solid var(--color-primary);
-  box-shadow: 0.12em 0.12em var(--color-secondary);
+  box-shadow: 0.12em 0.12em $SECTION_DARK;
   place-content: center;
 }
