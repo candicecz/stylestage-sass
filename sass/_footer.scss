@@ -10,6 +10,9 @@
   background-position: center -34px;
   color: var(--color-light);
 
+  .container {
+    background-color: $FOOTER_PRIMARY;
+  }
   &::before {
     @include logomark;
 
@@ -35,7 +38,7 @@
   }
 
   p a {
-    @include text_link($BG_YELLOW, $SECTION_SECONDARY);
+    @include text_link($BG_DEFAULT, $SECTION_SECONDARY);
   }
 
   ul {

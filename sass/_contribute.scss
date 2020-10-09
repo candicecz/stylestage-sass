@@ -2,6 +2,7 @@
   background: $SECTION_BG;
   display: flex;
   flex-direction: column;
+  background-image: url("/assets/starry.svg");
 
   .container {
     @include basic-container();
@@ -9,6 +10,8 @@
 
     p {
       color: $SECTION_TEXT;
+      padding: 1rem;
+      background: $SECTION_BG;
       a {
         @include text_link();
       }
@@ -68,6 +71,11 @@
         max-width: 50%;
         margin: 0 auto;
       }
+      .link-codepen {
+        width: unset !important;
+        background: $SECTION_BG;
+        padding: 1rem;
+      }
       .link-downloadcss {
         position: relative;
 
@@ -78,6 +86,7 @@
           background-image: url("/assets/rocket_right.svg");
           position: absolute;
           transform: translate(-165%, 100%);
+          opacity: 0.75;
         }
       }
       .link-downloadhtml {
@@ -90,6 +99,7 @@
           background-image: url("/assets/rocket_right.svg");
           position: absolute;
           transform: translate(184%, -100%) scale(-1);
+          opacity: 0.75;
         }
       }
     }

@@ -743,6 +743,7 @@ header .container .link-github {
   background: #27162d;
   display: flex;
   flex-direction: column;
+  background-image: url("/assets/starry.svg");
 }
 #about .container {
   display: flex;
@@ -767,6 +768,7 @@ header .container .link-github {
 #about .container > p {
   color: #7c75ff;
   background: #27162d;
+  padding: 1rem;
 }
 #about .container p a {
   color: #ff4a80;
@@ -1006,6 +1008,7 @@ header .container .link-github {
   background: #27162d;
   display: flex;
   flex-direction: column;
+  background-image: url("/assets/starry.svg");
 }
 #contribute .container {
   display: flex;
@@ -1028,6 +1031,8 @@ header .container .link-github {
 }
 #contribute .container p {
   color: #7c75ff;
+  padding: 1rem;
+  background: #27162d;
 }
 #contribute .container p a {
   color: #ff4a80;
@@ -1117,6 +1122,11 @@ header .container .link-github {
     max-width: 50%;
     margin: 0 auto;
   }
+  #contribute .container .link-codepen {
+    width: unset !important;
+    background: #27162d;
+    padding: 1rem;
+  }
   #contribute .container .link-downloadcss {
     position: relative;
   }
@@ -1127,6 +1137,7 @@ header .container .link-github {
     background-image: url("/assets/rocket_right.svg");
     position: absolute;
     transform: translate(-165%, 100%);
+    opacity: 0.75;
   }
   #contribute .container .link-downloadhtml {
     position: relative;
@@ -1138,6 +1149,7 @@ header .container .link-github {
     background-image: url("/assets/rocket_right.svg");
     position: absolute;
     transform: translate(184%, -100%) scale(-1);
+    opacity: 0.75;
   }
 }
 
@@ -1510,11 +1522,14 @@ header .container .link-github {
   --logomark-padding: 0;
   position: relative;
   padding: 3rem 1rem;
-  background-color: #585858;
+  background-color: #424242;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23c9d0d8' fill-opacity='1'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-position: center -34px;
   color: var(--color-light);
+}
+.page-footer .container {
+  background-color: #424242;
 }
 .page-footer::before {
   display: inline-grid;
@@ -1543,7 +1558,7 @@ header .container .link-github {
   text-align: center;
 }
 .page-footer p a {
-  color: #fdeda4;
+  color: #fff6ed;
   font-family: var(--font-family-bold);
   transition: all 0.1s ease-in-out;
 }

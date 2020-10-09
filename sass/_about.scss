@@ -2,7 +2,7 @@
   background: $SECTION_BG;
   display: flex;
   flex-direction: column;
-  // background-image: url("/assets/starry.svg");
+  background-image: url("/assets/starry.svg");
   .container {
     @include basic-container();
     max-width: unset;
@@ -11,6 +11,7 @@
     > p {
       color: $SECTION_TEXT;
       background: $SECTION_BG;
+      padding: 1rem;
     }
     p {
       a {
