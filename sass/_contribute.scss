@@ -64,6 +64,30 @@
         max-width: 50%;
         margin: 0 auto;
       }
+      .link-downloadcss {
+        position: relative;
+
+        &:before {
+          content: "";
+          width: 6rem;
+          height: 6rem;
+          background-image: url("/assets/rocket_right.svg");
+          position: absolute;
+          transform: translate(-165%, 100%);
+        }
+      }
+      .link-downloadhtml {
+        position: relative;
+
+        &:before {
+          content: "";
+          width: 6rem;
+          height: 6rem;
+          background-image: url("/assets/rocket_right.svg");
+          position: absolute;
+          transform: translate(184%, -100%) scale(-1);
+        }
+      }
     }
   }
 }

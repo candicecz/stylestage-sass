@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+
+<g id="space">
+
+	<g id="sattelite">
+		<g id="Layer_6">
+			<circle fill="none" stroke="#FFFFFF" stroke-width="0.65" stroke-miterlimit="10" cx="24.8" cy="7.3" r="6.6"/>
+			<path opacity="0.5" fill="#FFFFFF" d="M29.5,4.9c1.4,2.7,0.3,6-2.4,7.4s-6,0.3-7.4-2.4c-1.4-2.7,2.2-1.1,4.9-2.5
+				S28.2,2.2,29.5,4.9z"/>
+			
+				<polyline fill="none" stroke="#FFFFFF" stroke-width="0.4518" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				26.2,13.9 17.6,26 28.3,13 			"/>
+			
+				<polyline fill="none" stroke="#FFFFFF" stroke-width="0.4518" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				21.9,13.5 12.7,26.3 22.9,13.9 			"/>
+			
+				<polyline fill="none" stroke="#FFFFFF" stroke-width="0.4518" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				18.3,5.6 5.1,12.9 19.1,3.8 			"/>
+			
+				<polyline fill="none" stroke="#FFFFFF" stroke-width="0.4518" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+				18.8,9.8 4.5,17.8 18.4,8.9 			"/>
+		</g>
+		
+			<path fill="none" stroke="#FFFFFF" stroke-width="0.1408" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M4.7,13.7c-0.3-0.1-0.6-0.4-0.7-0.7c-0.1-0.5,0.2-1,0.7-1.2"/>
+		
+			<path fill="none" stroke="#FFFFFF" stroke-width="0.176" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M4.5,14.3c-0.2,0-0.4-0.1-0.5-0.2c-0.4-0.2-0.6-0.5-0.7-1c-0.2-0.7,0.2-1.5,1-1.8"/>
+		
+			<path fill="none" stroke="#FFFFFF" stroke-width="0.2464" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M4.4,14.8c-0.9-0.1-1.6-0.7-1.8-1.5c-0.2-0.9,0.3-1.9,1.2-2.3"/>
+		
+			<path fill="none" stroke="#FFFFFF" stroke-width="0.1408" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M12.3,28.8c-0.4,0.1-0.9-0.1-1.2-0.4c-0.6-0.5-0.7-1.2-0.5-1.6"/>
+		
+			<path fill="none" stroke="#FFFFFF" stroke-width="0.176" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M12.7,29.6c-0.2,0.1-0.4,0.1-0.7,0.1c-0.5,0-1-0.2-1.5-0.6c-0.8-0.7-1.1-1.7-0.8-2.5"/>
+		
+			<path fill="none" stroke="#FFFFFF" stroke-width="0.2464" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+			M13,30.2c-0.9,0.3-2,0.1-2.9-0.6c-1-0.9-1.4-2.1-1.1-3.1"/>
+	</g>
+
+</g>
+
+</svg>

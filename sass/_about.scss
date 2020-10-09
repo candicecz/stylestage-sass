@@ -2,7 +2,7 @@
   background: $SECTION_BG;
   display: flex;
   flex-direction: column;
-
+  // background-image: url("/assets/starry.svg");
   .container {
     @include basic-container();
     max-width: unset;
@@ -10,6 +10,7 @@
 
     > p {
       color: $SECTION_TEXT;
+      background: $SECTION_BG;
     }
     p {
       a {
@@ -64,9 +65,23 @@
     }
   }
   @media (min-width: $BREAKPOINT_MD) {
-    .container {
+    .container,
+    section:nth-child(2) {
       > *:not(h2) {
         max-width: 50%;
+      }
+
+      > p:nth-of-type(1) {
+        position: relative;
+        &::before {
+          content: "";
+          background-image: url("/assets/sputnik.svg");
+          width: 5rem;
+          height: 5rem;
+          position: absolute;
+          left: -2rem;
+          transform: translate(-100%, -33%);
+        }
       }
     }
   }

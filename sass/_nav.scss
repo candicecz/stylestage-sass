@@ -64,7 +64,7 @@ nav {
     background: $HEADER_PRIMARY;
     display: flex;
     ul {
-      margin-top: $MATRYOSHKA_MAX_HEIGHT;
+      margin-top: $MATRYOSHKA_MAX_HEIGHT/2;
       position: relative;
       width: 100%;
 
@@ -84,15 +84,15 @@ nav {
         &:nth-child(1) {
           &:after {
             content: "";
-            width: $MATRYOSHKA_MIN_HEIGHT + 5rem;
-            height: $MATRYOSHKA_MIN_HEIGHT + 5rem;
+            width: $MATRYOSHKA_MIN_HEIGHT + 6rem;
+            height: $MATRYOSHKA_MIN_HEIGHT + 6rem;
           }
         }
         &:nth-child(2) {
           &:after {
             content: "";
-            width: $MATRYOSHKA_MIN_HEIGHT + 4.5rem;
-            height: $MATRYOSHKA_MIN_HEIGHT + 4.5rem;
+            width: $MATRYOSHKA_MIN_HEIGHT + 5rem;
+            height: $MATRYOSHKA_MIN_HEIGHT + 5rem;
           }
         }
         &:nth-child(3) {

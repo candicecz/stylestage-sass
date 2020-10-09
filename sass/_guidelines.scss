@@ -1,4 +1,3 @@
-$GUIDELINES_PRIMARY: #c9d0d8;
 $GUIDELINES_SECONDARY: #fd2f01;
 $GUIDELINES_TEXT: #413937;
 
@@ -6,7 +5,7 @@ $BANNER_WIDTH: 10rem;
 $BANNER_HEIGHT: 55rem;
 
 #guidelines {
-  background: $GUIDELINES_PRIMARY;
+  background: $GREY_200;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,12 +43,7 @@ $BANNER_HEIGHT: 55rem;
       }
     }
     .link-guidelines {
-      @include solid-link(
-        $GUIDELINES_TEXT,
-        $BG_DEFAULT,
-        #000,
-        $GUIDELINES_PRIMARY
-      );
+      @include solid-link($GUIDELINES_TEXT, $BG_DEFAULT, #000, $GREY_200);
       @include space("padding", 3);
       @include font-ry();
 

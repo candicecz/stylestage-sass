@@ -1,7 +1,7 @@
 $PROFILE_SECONDARY: #3c455b;
 $PROFILE_TEXT: #ffffff;
 .profile {
-  z-index: 1;
+  z-index: 100;
 
   .container {
     @include space(padding-bottom, 5);
