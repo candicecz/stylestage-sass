@@ -1041,15 +1041,10 @@ header .container .link-github svg {
 @media (min-width: 48em) {
   #guidelines {
     position: relative;
-    min-height: 55rem;
   }
   #guidelines .container a {
     margin-top: 2rem;
     margin-bottom: 2rem;
-  }
-  #guidelines .container > :not(h2),
-#guidelines .container .link-guidelines {
-    margin-left: 12rem;
   }
 }
 
