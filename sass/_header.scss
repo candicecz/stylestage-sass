@@ -50,6 +50,9 @@ header {
     .link-github {
       margin-top: 2rem;
       align-self: center;
+      svg {
+        width: 0;
+      }
     }
   }
   @media (min-width: $BREAKPOINT_SM) {

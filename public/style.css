@@ -259,38 +259,6 @@ blockquote p strong {
   font-weight: var(--font-weight-strong);
 }
 
-[class^=link]:not(.link-codepen):not(.page-footer li) {
-  min-height: 3em;
-  background-color: var(--color-primary);
-  color: #fff;
-  box-shadow: 0.18em 0.18em #d42257;
-}
-
-[class^=link]:not(.link-codepen):not(.page-footer li),
-.profile .container > a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 0.75em;
-  transform: translate(0, 0);
-  transition: 180ms all ease-in-out;
-  font-size: 1.125rem;
-  line-height: 1;
-  text-align: center;
-  text-decoration: none;
-}
-[class^=link]:not(.link-codepen):not(.page-footer li):hover, [class^=link]:not(.link-codepen):not(.page-footer li):focus,
-.profile .container > a:hover,
-.profile .container > a:focus {
-  transform: translate(-0.15em, -0.15em);
-  box-shadow: 0.3em 0.3em #d42257;
-}
-[class^=link]:not(.link-codepen):not(.page-footer li):focus,
-.profile .container > a:focus {
-  outline-color: transparent;
-  outline-style: solid;
-}
-
 .link-codepen {
   margin-top: 0.5rem;
   display: block;
@@ -420,6 +388,7 @@ body {
   color: #000;
   font-family: var(--font-family);
   min-width: 300px;
+  overflow: hidden;
 }
 
 main:focus {
@@ -806,6 +775,9 @@ header .container .link-github {
   margin-top: 2rem;
   align-self: center;
 }
+header .container .link-github svg {
+  width: 0;
+}
 @media (min-width: 30em) {
   header {
     padding: 5vh 2rem;
@@ -1071,28 +1043,9 @@ header .container .link-github {
     position: relative;
     min-height: 55rem;
   }
-  #guidelines .container {
-    margin-top: 5vh;
-    margin-top: 5vh;
-  }
   #guidelines .container a {
     margin-top: 2rem;
     margin-bottom: 2rem;
-  }
-  #guidelines .container h2 {
-    padding: 0 5rem;
-    line-height: 0;
-    width: 10rem;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 0;
-    font-size: var(--font-size-h2);
-    writing-mode: tb-rl;
-    text-orientation: upright;
-    padding-top: 5vh;
-    text-align: start;
   }
   #guidelines .container > :not(h2),
 #guidelines .container .link-guidelines {

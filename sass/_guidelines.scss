@@ -55,28 +55,27 @@ $BANNER_HEIGHT: 55rem;
     position: relative;
     min-height: $BANNER_HEIGHT;
     .container {
-      margin-top: 5vh;
-      margin-top: 5vh;
       a {
         @include space("margin-top", 7);
         @include space("margin-bottom", 7);
       }
 
-      h2 {
-        padding: 0 5rem;
-        line-height: 0;
-        width: $BANNER_WIDTH;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        margin: 0;
-        font-size: var(--font-size-h2);
-        writing-mode: tb-rl;
-        text-orientation: upright;
-        padding-top: 5vh;
-        text-align: start;
-      }
+      // h2 {
+      //   padding: 0 5rem;
+      //   line-height: 0;
+      //   width: $BANNER_WIDTH;
+      //   height: 100%;
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   margin: 0;
+      //   font-size: var(--font-size-h2);
+      //   writing-mode: tb-rl;
+      //   -webkit-text-orientation: upright;
+      //   text-orientation: upright;
+      //   padding-top: 5vh;
+      //   text-align: start;
+      // }
       > :not(h2),
       .link-guidelines {
         margin-left: $BANNER_WIDTH + 2rem;
