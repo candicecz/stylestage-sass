@@ -57,3 +57,41 @@ article,
     max-width: 80%;
   }
 }
+
+#contribute .container:nth-child(2),
+.profile .container {
+  @include squares();
+  background: $BG_DEFAULT;
+  h3,
+  h4 {
+    @include header($SECTION_DEFAULT, $HEADER_DARK);
+    @include space(margin, 2);
+    @include space(padding, 2);
+    background: $SECTION_PRIMARY;
+
+    font-size: var(--font-size-h4);
+    box-shadow: 4px 6px $SECTION_SECONDARY;
+    text-shadow: unset;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+  }
+  ol,
+  ul {
+    max-width: unset;
+  }
+  p,
+  ol li,
+  ul li {
+    font-size: var(--font-size-h5);
+
+    color: $SECTION_BG;
+
+    a {
+      color: $SECTION_DARK;
+      &:hover {
+        color: $SECTION_BG;
+      }
+    }
+  }
+}

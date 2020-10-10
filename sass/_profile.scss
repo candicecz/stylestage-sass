@@ -1,88 +1,92 @@
-$PROFILE_SECONDARY: #3c455b;
 $PROFILE_TEXT: #ffffff;
+$PROFILE_BG: #cac7ff;
+$PROFILE_VALUES: #17126f;
+
 .profile {
   z-index: 100;
+  background: $SECTION_BG;
+  display: flex;
+  flex-direction: column;
+  background-image: url($ASSET_ROOT + "starry.svg");
+  background-size: cover;
+  padding: 4rem 0;
 
   .container {
-    @include space(padding-bottom, 5);
-    display: grid;
-    justify-items: center;
-    grid-gap: 1rem;
-    background-color: $PROFILE_SECONDARY;
-    h4 {
-      @include space(padding, 5);
-      width: 100%;
-      text-align: center;
-      background: $SECTION_PRIMARY;
-      color: $SECTION_DEFAULT;
-    }
+    @include basic-container();
+    background: $PROFILE_BG;
+    max-width: unset;
+    flex-direction: column;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
+    p {
+      color: $BG_DEFAULT;
+      padding: 1rem;
+      background: $SECTION_BG;
+      a {
+        @include text_link();
+      }
+    }
+    h4 {
+      @include header($SECTION_DEFAULT, $HEADER_DARK);
+      @include space(margin, 2);
+      @include space(padding, 2);
+      background: $SECTION_PRIMARY;
+
+      font-size: var(--font-size-h4);
+      box-shadow: 4px 6px $SECTION_SECONDARY;
+      text-shadow: unset;
+      width: 100%;
+      align-self: center;
+      text-align: center;
+    }
     > a {
       @include solid-link(
-        $PROFILE_TEXT,
-        $SECTION_PRIMARY,
-        $SECTION_PRIMARY,
-        $SECTION_TEXT,
-        $BG_GREEN
+        $SECTION_DEFAULT,
+        $SECTION_DARK,
+        $SECTION_SECONDARY,
+        $SECTION_DARK,
+        $SECTION_SECONDARY
       );
 
-      @include space("padding-top", 4);
-      @include space("padding-bottom", 4);
+      @include space("padding", 4);
+      justify-content: center;
     }
   }
 
   ul {
-    @include space(padding-left, 5);
-    @include space(padding-right, 5);
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0;
-    list-style: none;
-    color: $BG_DEFAULT;
-
+    padding-left: 0;
     li {
       display: flex;
       padding: 0.45em;
-
+      color: white;
+      span {
+        font-family: var(--font-family-black);
+      }
       span:nth-child(1) {
         width: auto;
         margin-right: 0.25em;
-        font-family: var(--font-family-black);
       }
 
       span:nth-child(2) {
         flex-grow: 1;
         word-break: break-word;
+        color: $PROFILE_VALUES;
         a {
-          @include text-link($SECTION_DEFAULT, $BG_GREEN);
+          @include text-link($PROFILE_VALUES, #1108ff);
         }
       }
     }
   }
-
-  @media (min-width: 180ch) {
-    position: fixed;
-    right: 2vmin;
-    bottom: 2vmin;
-    max-width: 30ch;
-    margin-bottom: 0;
-    border-radius: 4px;
-
-    overflow: hidden;
-
-    ul {
-      justify-content: unset;
-
-      li {
-        padding: 0;
-
-        span:nth-child(1) {
-          width: 8ch;
-          margin-right: 0;
-        }
-      }
+  @media (min-width: $BREAKPOINT_SM) {
+    align-items: center;
+    .container {
+      @include space("padding", 7);
+    }
+  }
+  @media (min-width: $BREAKPOINT_MD) {
+    .container {
+      max-width: 50%;
     }
   }
 }

@@ -25,7 +25,9 @@
         margin: 0.5rem;
       }
     }
-
+    a {
+      @include font-ry;
+    }
     a:first-of-type {
       @include solid-link(
         $SECTION_DEFAULT,
@@ -34,7 +36,6 @@
         $SECTION_DARK,
         $SECTION_SECONDARY
       );
-      @include font-ry();
     }
 
     a:nth-of-type(2) {
@@ -45,13 +46,11 @@
         $SECTION_PRIMARY,
         $SECTION_TEXT
       );
-      @include font-ry();
       white-space: nowrap;
     }
 
     .link-codepen {
       @include text-link($BG_DEFAULT, $BG_GREEN);
-      @include font-ry();
     }
   }
   @media (min-width: $BREAKPOINT_MD) {

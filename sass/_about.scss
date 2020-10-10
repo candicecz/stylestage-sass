@@ -2,7 +2,7 @@
   background: $SECTION_BG;
   display: flex;
   flex-direction: column;
-  background-image: url("/assets/starry.svg");
+  background-image: url($ASSET_ROOT + "starry.svg");
   .container {
     @include basic-container();
     max-width: unset;
@@ -76,7 +76,7 @@
         position: relative;
         &::before {
           content: "";
-          background-image: url("/assets/sputnik.svg");
+          background-image: url($ASSET_ROOT + "sputnik.svg");
           width: 5rem;
           height: 5rem;
           position: absolute;

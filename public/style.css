@@ -1,34 +1,34 @@
 @font-face {
   font-family: "Propaganda";
-  src: url("fonts/propaganda.ttf") format("truetype");
+  src: url("https://candicecz.github.io/stylestage-sass/public/fonts/propaganda.ttf") format("truetype");
 }
 @font-face {
   font-family: "Kremlin";
-  src: url("fonts/kremlin.ttf") format("truetype");
+  src: url("https://candicecz.github.io/stylestage-sass/public/fonts/kremlin.ttf") format("truetype");
 }
 @font-face {
   font-family: "Kyrilla";
-  src: url("fonts/kyrilla.ttf") format("truetype");
+  src: url("https://candicecz.github.io/stylestage-sass/public/fonts/kyrilla.ttf") format("truetype");
 }
 @font-face {
   font-family: "RealYoung";
-  src: url("fonts/realyoung.ttf") format("truetype");
+  src: url("https://candicecz.github.io/stylestage-sass/public/fonts/realyoung.ttf") format("truetype");
 }
 @font-face {
   font-family: "College";
-  src: url("fonts/college.ttf") format("truetype");
+  src: url("https://candicecz.github.io/stylestage-sass/public/fonts/college.ttf") format("truetype");
 }
 @font-face {
   font-family: "Lato";
-  src: url("fonts/Lato-Regular.ttf") format("truetype");
+  src: url("https://candicecz.github.io/stylestage-sass/public/fonts/Lato-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: "Lato-Bold";
-  src: url("fonts/Lato-Bold.ttf") format("truetype");
+  src: url("https://candicecz.github.io/stylestage-sass/public/fonts/Lato-Bold.ttf") format("truetype");
 }
 @font-face {
   font-family: "Lato-Black";
-  src: url("fonts/Lato-Black.ttf") format("truetype");
+  src: url("https://candicecz.github.io/stylestage-sass/public/fonts/Lato-Black.ttf") format("truetype");
 }
 /*
 =============================================================
@@ -318,6 +318,7 @@ body .skip-link {
   background: #fff6ed;
   color: #363636;
   white-space: nowrap;
+  box-shadow: 1px 5px 5px 2px #00000020;
 }
 body .skip-link:hover {
   color: #f3acc1;
@@ -336,7 +337,8 @@ body .skip-link:before {
   content: "";
   width: 3rem;
   height: 3rem;
-  background-image: url("/assets/megaphone.svg");
+  min-width: 3rem;
+  background-image: url("https://candicecz.github.io/stylestage-sass/public/assets/megaphone.svg");
   background-repeat: no-repeat;
   background-color: #fff6ed;
 }
@@ -363,6 +365,8 @@ header .link-github[class^=link] {
   padding-bottom: 0.25rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-decoration: none;
   color: #842929;
   background: #fff6ed;
@@ -402,7 +406,7 @@ header .link-github[class^=link]:before {
   min-width: 11rem;
   height: 7rem;
   background-color: #b12f2f;
-  background-image: url("/assets/github_star.svg");
+  background-image: url("https://candicecz.github.io/stylestage-sass/public/assets/github_star.svg");
   background-repeat: no-repeat;
   padding: 0;
 }
@@ -446,6 +450,90 @@ article .container,
   list-style: none;
 }
 
+#contribute .container:nth-child(2),
+.profile .container {
+  position: relative;
+  background: #fff6ed;
+}
+#contribute .container:nth-child(2)::before,
+.profile .container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border: 4px solid #5a50f3;
+  box-shadow: -0.75em 2.25em #ff4a80;
+  transform: translate(-100%, -100%);
+  background: #5a50f3;
+}
+#contribute .container:nth-child(2)::after,
+.profile .container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border: 4px solid #5a50f3;
+  box-shadow: -0.75em 2.25em #ff4a80;
+  transform: translate(-100%, -100%);
+  background: #5a50f3;
+  left: unset;
+  top: unset;
+  right: 0;
+  bottom: 0;
+}
+#contribute .container:nth-child(2) h3,
+#contribute .container:nth-child(2) h4,
+.profile .container h3,
+.profile .container h4 {
+  font-family: var(--font-family-heading);
+  color: #fcfcfc;
+  text-shadow: 4px 4px #b12f2f;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background: #5a50f3;
+  font-size: var(--font-size-h4);
+  box-shadow: 4px 6px #ff4a80;
+  text-shadow: unset;
+  width: 100%;
+  align-self: center;
+  text-align: center;
+}
+#contribute .container:nth-child(2) ol,
+#contribute .container:nth-child(2) ul,
+.profile .container ol,
+.profile .container ul {
+  max-width: unset;
+}
+#contribute .container:nth-child(2) p,
+#contribute .container:nth-child(2) ol li,
+#contribute .container:nth-child(2) ul li,
+.profile .container p,
+.profile .container ol li,
+.profile .container ul li {
+  font-size: var(--font-size-h5);
+  color: #27162d;
+}
+#contribute .container:nth-child(2) p a,
+#contribute .container:nth-child(2) ol li a,
+#contribute .container:nth-child(2) ul li a,
+.profile .container p a,
+.profile .container ol li a,
+.profile .container ul li a {
+  color: #d42257;
+}
+#contribute .container:nth-child(2) p a:hover,
+#contribute .container:nth-child(2) ol li a:hover,
+#contribute .container:nth-child(2) ul li a:hover,
+.profile .container p a:hover,
+.profile .container ol li a:hover,
+.profile .container ul li a:hover {
+  color: #27162d;
+}
+
 nav ul,
 .page-footer ul {
   padding: 2rem;
@@ -462,6 +550,8 @@ nav ul li,
   padding-bottom: 0.25rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-decoration: none;
   color: #27162d;
   background: #fff6ed;
@@ -543,6 +633,8 @@ nav {
     padding-bottom: 0.25rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     text-decoration: none;
     color: #27162d;
     background: #fff6ed;
@@ -623,7 +715,7 @@ nav {
   }
   nav ul li:after {
     content: "";
-    background-image: url("/assets/matryoshka.svg");
+    background-image: url("https://candicecz.github.io/stylestage-sass/public/assets/matryoshka.svg");
     background-repeat: no-repeat;
     background-position: center;
     position: absolute;
@@ -680,6 +772,8 @@ header .container p a {
   padding-bottom: 0.25rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-decoration: none;
   color: #842929;
   background: #fff6ed;
@@ -743,7 +837,7 @@ header .container .link-github {
   background: #27162d;
   display: flex;
   flex-direction: column;
-  background-image: url("/assets/starry.svg");
+  background-image: url("https://candicecz.github.io/stylestage-sass/public/assets/starry.svg");
 }
 #about .container {
   display: flex;
@@ -863,7 +957,7 @@ header .container .link-github {
   #about .container > p:nth-of-type(1)::before,
 #about section:nth-child(2) > p:nth-of-type(1)::before {
     content: "";
-    background-image: url("/assets/sputnik.svg");
+    background-image: url("https://candicecz.github.io/stylestage-sass/public/assets/sputnik.svg");
     width: 5rem;
     height: 5rem;
     position: absolute;
@@ -941,6 +1035,8 @@ header .container .link-github {
   padding-bottom: 0.25rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-decoration: none;
   color: #fff6ed;
   background: #413937;
@@ -1008,7 +1104,7 @@ header .container .link-github {
   background: #27162d;
   display: flex;
   flex-direction: column;
-  background-image: url("/assets/starry.svg");
+  background-image: url("https://candicecz.github.io/stylestage-sass/public/assets/starry.svg");
 }
 #contribute .container {
   display: flex;
@@ -1047,68 +1143,6 @@ header .container .link-github {
   font-family: var(--font-family-black);
   color: #fcfcfc;
 }
-#contribute .container:nth-child(2) {
-  position: relative;
-  background: #fff6ed;
-}
-#contribute .container:nth-child(2)::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  border: 4px solid #5a50f3;
-  box-shadow: -0.75em 2.25em #ff4a80;
-  transform: translate(-100%, -100%);
-  background: #5a50f3;
-}
-#contribute .container:nth-child(2)::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  border: 4px solid #5a50f3;
-  box-shadow: -0.75em 2.25em #ff4a80;
-  transform: translate(-100%, -100%);
-  background: #5a50f3;
-  left: unset;
-  top: unset;
-  right: 0;
-  bottom: 0;
-}
-#contribute .container:nth-child(2) h3 {
-  font-family: var(--font-family-heading);
-  color: #fcfcfc;
-  text-shadow: 4px 4px #b12f2f;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  background: #5a50f3;
-  font-size: var(--font-size-h4);
-  box-shadow: 4px 6px #ff4a80;
-  text-shadow: unset;
-  width: 100%;
-  align-self: center;
-  text-align: center;
-}
-#contribute .container:nth-child(2) ol {
-  max-width: unset;
-}
-#contribute .container:nth-child(2) p,
-#contribute .container:nth-child(2) ol li {
-  font-size: var(--font-size-h5);
-  color: #27162d;
-}
-#contribute .container:nth-child(2) p a,
-#contribute .container:nth-child(2) ol li a {
-  color: #d42257;
-}
-#contribute .container:nth-child(2) p a:hover,
-#contribute .container:nth-child(2) ol li a:hover {
-  color: #27162d;
-}
 @media (min-width: 30em) {
   #contribute .container:nth-child(2) {
     padding: 2rem;
@@ -1134,7 +1168,7 @@ header .container .link-github {
     content: "";
     width: 6rem;
     height: 6rem;
-    background-image: url("/assets/rocket_right.svg");
+    background-image: url("https://candicecz.github.io/stylestage-sass/public/assets/rocket_right.svg");
     position: absolute;
     transform: translate(-165%, 100%);
     opacity: 0.75;
@@ -1146,7 +1180,7 @@ header .container .link-github {
     content: "";
     width: 6rem;
     height: 6rem;
-    background-image: url("/assets/rocket_right.svg");
+    background-image: url("https://candicecz.github.io/stylestage-sass/public/assets/rocket_right.svg");
     position: absolute;
     transform: translate(184%, -100%) scale(-1);
     opacity: 0.75;
@@ -1179,12 +1213,18 @@ header .container .link-github {
 #files .container a:not(.link-codepen):not(:last-child) {
   margin: 0.5rem;
 }
+#files .container a {
+  font-family: "RealYoung";
+  letter-spacing: 0.1rem;
+}
 #files .container a:first-of-type {
   padding: 0.5rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-decoration: none;
   color: #d42257;
   background: #fcfcfc;
@@ -1197,8 +1237,6 @@ header .container .link-github {
   align-items: center;
   font-family: var(--font-family-black);
   text-transform: uppercase;
-  font-family: "RealYoung";
-  letter-spacing: 0.1rem;
 }
 #files .container a:first-of-type:hover, #files .container a:first-of-type:focus {
   padding-left: 1rem;
@@ -1218,6 +1256,8 @@ header .container .link-github {
   padding-bottom: 0.25rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-decoration: none;
   color: #5a50f3;
   background: #fcfcfc;
@@ -1230,8 +1270,6 @@ header .container .link-github {
   align-items: center;
   font-family: var(--font-family-black);
   text-transform: uppercase;
-  font-family: "RealYoung";
-  letter-spacing: 0.1rem;
   white-space: nowrap;
 }
 #files .container a:nth-of-type(2):hover, #files .container a:nth-of-type(2):focus {
@@ -1250,8 +1288,6 @@ header .container .link-github {
   color: #fff6ed;
   font-family: var(--font-family-bold);
   transition: all 0.1s ease-in-out;
-  font-family: "RealYoung";
-  letter-spacing: 0.1rem;
 }
 #files .container .link-codepen:hover {
   color: #5af1b8;
@@ -1367,6 +1403,8 @@ header .container .link-github {
   padding-bottom: 0.25rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-decoration: none;
   color: #fff6ed;
   background: #413937;
@@ -1407,27 +1445,70 @@ header .container .link-github {
 #styles .container .features.patterned li {
   border: 4px solid #fdeda4;
   border-radius: 2px;
-  background-image: url("/assets/bg_starburst.svg");
+  background-image: url("https://candicecz.github.io/stylestage-sass/public/assets/bg_starburst.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .profile {
   z-index: 100;
+  background: #27162d;
+  display: flex;
+  flex-direction: column;
+  background-image: url("https://candicecz.github.io/stylestage-sass/public/assets/starry.svg");
+  background-size: cover;
+  padding: 4rem 0;
 }
 .profile .container {
-  padding-bottom: 1.25rem;
-  display: grid;
-  justify-items: center;
-  grid-gap: 1rem;
-  background-color: #3c455b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh;
+  background: #cac7ff;
+  max-width: unset;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.profile .container h2 {
+  padding: 4rem;
+  margin-bottom: 4rem;
+  font-family: var(--font-family-heading);
+  color: #fcfcfc;
+  text-shadow: 4px 4px #ff4a80;
+  background: #5a50f3;
+  width: 100%;
+}
+.profile .container > *:not(h2) {
+  max-width: 80%;
+}
+.profile .container p {
+  color: #fff6ed;
+  padding: 1rem;
+  background: #27162d;
+}
+.profile .container p a {
+  color: #ff4a80;
+  font-family: var(--font-family-bold);
+  transition: all 0.1s ease-in-out;
+}
+.profile .container p a:hover {
+  color: #f3acc1;
+  transition: all 0.1s ease-in-out;
 }
 .profile .container h4 {
-  padding: 1.25rem;
-  width: 100%;
-  text-align: center;
-  background: #5a50f3;
+  font-family: var(--font-family-heading);
   color: #fcfcfc;
+  text-shadow: 4px 4px #b12f2f;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background: #5a50f3;
+  font-size: var(--font-size-h4);
+  box-shadow: 4px 6px #ff4a80;
+  text-shadow: unset;
+  width: 100%;
+  align-self: center;
+  text-align: center;
 }
 .profile .container > a {
   padding: 0.5rem;
@@ -1435,10 +1516,12 @@ header .container .link-github {
   padding-bottom: 0.25rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-decoration: none;
-  color: #5a50f3;
-  background: #ffffff;
-  box-shadow: 0.18em 0.18em #5a50f3;
+  color: #d42257;
+  background: #fcfcfc;
+  box-shadow: 0.18em 0.18em #ff4a80;
   text-align: center;
   transition: all 0.2s ease-in-out;
   line-height: 1;
@@ -1447,73 +1530,61 @@ header .container .link-github {
   align-items: center;
   font-family: var(--font-family-black);
   text-transform: uppercase;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
+  justify-content: center;
 }
 .profile .container > a:hover, .profile .container > a:focus {
   padding-left: 1rem;
   padding-right: 1rem;
-  color: #7c75ff;
+  color: #d42257;
   transform: translate(-0.15em, -0.15em);
   transition: all 0.2s ease-in-out;
-  box-shadow: 0.3em 0.3em #5af1b8;
+  box-shadow: 0.3em 0.3em #ff4a80;
 }
 .profile .container > a:focus {
   outline-color: transparent;
   outline-style: solid;
 }
 .profile ul {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0;
-  list-style: none;
-  color: #fff6ed;
+  padding-left: 0;
 }
 .profile ul li {
   display: flex;
   padding: 0.45em;
+  color: white;
+}
+.profile ul li span {
+  font-family: var(--font-family-black);
 }
 .profile ul li span:nth-child(1) {
   width: auto;
   margin-right: 0.25em;
-  font-family: var(--font-family-black);
 }
 .profile ul li span:nth-child(2) {
   flex-grow: 1;
   word-break: break-word;
+  color: #17126f;
 }
 .profile ul li span:nth-child(2) a {
-  color: #fcfcfc;
+  color: #17126f;
   font-family: var(--font-family-bold);
   transition: all 0.1s ease-in-out;
 }
 .profile ul li span:nth-child(2) a:hover {
-  color: #5af1b8;
+  color: #1108ff;
   transition: all 0.1s ease-in-out;
 }
-@media (min-width: 180ch) {
+@media (min-width: 30em) {
   .profile {
-    position: fixed;
-    right: 2vmin;
-    bottom: 2vmin;
-    max-width: 30ch;
-    margin-bottom: 0;
-    border-radius: 4px;
-    overflow: hidden;
+    align-items: center;
   }
-  .profile ul {
-    justify-content: unset;
+  .profile .container {
+    padding: 2rem;
   }
-  .profile ul li {
-    padding: 0;
-  }
-  .profile ul li span:nth-child(1) {
-    width: 8ch;
-    margin-right: 0;
+}
+@media (min-width: 48em) {
+  .profile .container {
+    max-width: 50%;
   }
 }
 
