@@ -99,7 +99,8 @@ body {
       right: 0;
       height: $SKIP_LINK_SVG_WIDTH;
     }
-    &:hover {
+    &:hover,
+    &:focus {
       color: $SECTION_DARK;
     }
 
@@ -119,7 +120,8 @@ body {
       width: $SKIP_LINK_SVG_WIDTH;
       overflow: hidden;
 
-      &:hover {
+      &:hover,
+      :focus {
         width: unset;
         padding-left: $SKIP_LINK_SVG_WIDTH + 1;
         transition: all 0.2s ease-in-out;
