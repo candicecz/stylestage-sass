@@ -298,7 +298,7 @@ body .skip-link:focus {
   right: 0;
   height: 4rem;
 }
-body .skip-link:hover {
+body .skip-link:hover, body .skip-link:focus {
   color: #d42257;
 }
 body .skip-link:before {
@@ -315,7 +315,7 @@ body .skip-link:before {
     width: 4rem;
     overflow: hidden;
   }
-  body .skip-link:hover {
+  body .skip-link:hover, body .skip-link:focus {
     width: unset;
     padding-left: 5rem;
     transition: all 0.2s ease-in-out;

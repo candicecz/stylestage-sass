@@ -121,7 +121,7 @@ body {
       overflow: hidden;
 
       &:hover,
-      :focus {
+      &:focus {
         width: unset;
         padding-left: $SKIP_LINK_SVG_WIDTH + 1;
         transition: all 0.2s ease-in-out;
