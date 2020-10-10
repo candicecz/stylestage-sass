@@ -313,6 +313,7 @@ body .skip-link:before {
 @media (min-width: 30em) {
   body .skip-link {
     width: 4rem;
+    overflow: hidden;
   }
   body .skip-link:hover {
     width: unset;

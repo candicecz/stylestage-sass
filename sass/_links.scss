@@ -117,6 +117,7 @@ body {
   @media (min-width: $BREAKPOINT_SM) {
     .skip-link {
       width: $SKIP_LINK_SVG_WIDTH;
+      overflow: hidden;
 
       &:hover {
         width: unset;
